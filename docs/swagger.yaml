@@ -1,0 +1,469 @@
+basePath: /
+definitions:
+  model.Comment:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo:
+        $ref: '#/definitions/model.Photo'
+      photoID:
+        type: integer
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/model.User'
+      userID:
+        type: integer
+    type: object
+  model.Photo:
+    properties:
+      caption:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/model.User'
+      userID:
+        type: integer
+    type: object
+  model.SocialMedia:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      social_media_url:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/model.User'
+      userID:
+        type: integer
+    type: object
+  model.User:
+    properties:
+      age:
+        type: integer
+      created_at:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      password:
+        type: string
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample service for managing social media.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: API Social Media
+  version: "1.0"
+paths:
+  /comment/create:
+    post:
+      consumes:
+      - application/json
+      description: Post data and create comment using given data
+      parameters:
+      - description: Create comment
+        in: body
+        name: model.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/model.Comment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Comment'
+      summary: Create comment
+      tags:
+      - comment
+  /comment/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete comment by given id
+      parameters:
+      - description: delete comment
+        in: body
+        name: model.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/model.Comment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Comment'
+      summary: Delete comment by id comment
+      tags:
+      - comment
+  /comment/get:
+    get:
+      consumes:
+      - application/json
+      description: Get data comment
+      parameters:
+      - description: get all comment
+        in: body
+        name: model.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/model.Comment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Comment'
+      summary: Get all comment
+      tags:
+      - comment
+  /comment/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get data comment by given id
+      parameters:
+      - description: get comment by id
+        in: body
+        name: model.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/model.Comment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Comment'
+      summary: Get comment by id comment
+      tags:
+      - comment
+  /comment/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Put data and update comment using given data
+      parameters:
+      - description: Update comment
+        in: body
+        name: model.Comment
+        required: true
+        schema:
+          $ref: '#/definitions/model.Comment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Comment'
+      summary: Update comment
+      tags:
+      - comment
+  /photo/create:
+    post:
+      consumes:
+      - application/json
+      description: Post data and create photo using given data
+      parameters:
+      - description: Create photo
+        in: body
+        name: model.Photo
+        required: true
+        schema:
+          $ref: '#/definitions/model.Photo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Photo'
+      summary: Create photo
+      tags:
+      - photo
+  /photo/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete photo by given id
+      parameters:
+      - description: delete photo
+        in: body
+        name: model.Photo
+        required: true
+        schema:
+          $ref: '#/definitions/model.Photo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Photo'
+      summary: Delete photo by id photo
+      tags:
+      - photo
+  /photo/get:
+    get:
+      consumes:
+      - application/json
+      description: Get data photo
+      parameters:
+      - description: get all photo
+        in: body
+        name: model.Photo
+        required: true
+        schema:
+          $ref: '#/definitions/model.Photo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Photo'
+      summary: Get all photo
+      tags:
+      - photo
+  /photo/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get data photo by given id
+      parameters:
+      - description: get photo by id
+        in: body
+        name: model.Photo
+        required: true
+        schema:
+          $ref: '#/definitions/model.Photo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Photo'
+      summary: Get photo by id photo
+      tags:
+      - photo
+  /photo/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Put data and update photo using given data
+      parameters:
+      - description: Update photo
+        in: body
+        name: model.Photo
+        required: true
+        schema:
+          $ref: '#/definitions/model.Photo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Photo'
+      summary: Update photo
+      tags:
+      - photo
+  /socialmedia/create:
+    post:
+      consumes:
+      - application/json
+      description: Post data and create social media using given data
+      parameters:
+      - description: Create social media
+        in: body
+        name: model.SocialMedia
+        required: true
+        schema:
+          $ref: '#/definitions/model.SocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SocialMedia'
+      summary: Create social media
+      tags:
+      - social media
+  /socialmedia/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete social media by given id
+      parameters:
+      - description: delete social media
+        in: body
+        name: model.SocialMedia
+        required: true
+        schema:
+          $ref: '#/definitions/model.SocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SocialMedia'
+      summary: Delete social media by id social media
+      tags:
+      - social media
+  /socialmedia/get:
+    get:
+      consumes:
+      - application/json
+      description: Get data social media
+      parameters:
+      - description: get all social media
+        in: body
+        name: model.SocialMedia
+        required: true
+        schema:
+          $ref: '#/definitions/model.SocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SocialMedia'
+      summary: Get all social media
+      tags:
+      - social media
+  /socialmedia/get/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get data social media by given id
+      parameters:
+      - description: get social media by id
+        in: body
+        name: model.SocialMedia
+        required: true
+        schema:
+          $ref: '#/definitions/model.SocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SocialMedia'
+      summary: Get social media by id social media
+      tags:
+      - social media
+  /socialmedia/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Put data and update social media using given data
+      parameters:
+      - description: Update social media
+        in: body
+        name: model.SocialMedia
+        required: true
+        schema:
+          $ref: '#/definitions/model.SocialMedia'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SocialMedia'
+      summary: Update social media
+      tags:
+      - socialmedia
+  /user/login:
+    post:
+      consumes:
+      - application/json
+      description: Post data and login user
+      parameters:
+      - description: Login user
+        in: body
+        name: model.User
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.User'
+      summary: Login user
+      tags:
+      - accounts
+  /user/register:
+    post:
+      consumes:
+      - application/json
+      description: Post data and register user
+      parameters:
+      - description: Register user
+        in: body
+        name: mode.User
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.User'
+      summary: Register user
+      tags:
+      - accounts
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
