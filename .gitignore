@@ -24,4 +24,4 @@ main
 /bin/
 /pkg/
 
-*.env
+.env
