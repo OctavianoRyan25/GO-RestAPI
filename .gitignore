@@ -1,0 +1,25 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+vendor
+
+# Files
+main
+
+# Output files
+*.exe
+*.test
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.iml
+
+# Go specific
+/bin/
+/pkg/
