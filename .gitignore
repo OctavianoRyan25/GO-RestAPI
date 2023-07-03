@@ -23,3 +23,5 @@ main
 # Go specific
 /bin/
 /pkg/
+
+*.env
